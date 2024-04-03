@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { WagmiProvider } from "wagmi";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/header";
+import RouterContextProvider from "@/context/route.context";
+import { WagmiProvider_, wagmiConfig } from "@/engine/wagmiConfig";
+import WalletContextProvider from "@/context/wallet.context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <WagmiProvider_>
+          <WalletContextProvider>
+            <RouterContextProvider>
+              <NavBar />
+              {children}
+            </RouterContextProvider>
+          </WalletContextProvider>
+        </WagmiProvider_>
+      </body>
     </html>
   );
 }

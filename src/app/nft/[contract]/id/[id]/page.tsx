@@ -7,7 +7,7 @@ export default async function Asset({
 }: {
   params: { contract: hexType; id: string };
 }) {
-  const res = await fetch(`http://localhost:3000/api/get-token-info`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_NEXT_URL}api/get-token-info`, {
     body: JSON.stringify({
       addresses: [],
       isNFT: true,

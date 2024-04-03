@@ -52,7 +52,7 @@ export default function SendTokenAndNative({
       </div>
 
       <div className="text-[14px]">
-        Balance: {balance} {symb || "TFIL"}
+        Balance: {balance} {symb || "SEP-ETH"}
       </div>
       <div className="mt-1">
         <input

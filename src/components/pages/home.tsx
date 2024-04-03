@@ -32,7 +32,7 @@ export default function HomePage() {
     <div>
       <BalaceHead
         balance={wallet.getBalance().toFixed(4)}
-        symb={"TFIL"}
+        symb={"SEP-ETH"}
         address={wallet.address}
         price={"$1000"}
       />

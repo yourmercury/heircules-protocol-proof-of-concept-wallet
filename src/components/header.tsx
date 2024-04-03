@@ -42,7 +42,7 @@ export default function NavBar() {
         <div>
           Gas Tank:{" "}
           <abbr title={wallet?.getBalance().toString()}>
-            {wallet?.getBalance(true).toFixed(4)} TFIL
+            {wallet?.getBalance(true).toFixed(4)} SEP-ETH
           </abbr>
         </div>
       </div>
